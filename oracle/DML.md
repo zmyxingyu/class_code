@@ -77,6 +77,64 @@ JOIN tb_c on tb_c.cno = tb_sc.cno and tb_c.cname = '计算机基础'
 
 ```
 
+#### 单行子查询：
+
+子查询 (内查询) 在主查询之前一次执行完成。子查询的结果被主查询(外查询)使用 ，单行子查询，一个子查询语句只返回一行结果，不能返回空值
+
+可以使用>,<,<>(!=),=,<=,>=
+
+
+```
+
+SELECT
+    *
+FROM tb_s
+
+where totalcredit > (select totalcredit from tb_s WHERE sname='乔峰');
+
+```
+
+#### 多行子查询：
+
+子查询返回多行值，可使用多行比较符：in(not in)(等于/不等于返回值的任意一个),any(和返回值的某一个值比较),all(和返回值的所有值比较)
+
+```
+select last_name,salary
+
+from employees
+
+where salary = (
+
+select min(salary)
+
+from employees);
+
+
+
+SELECT
+    *
+FROM
+    tb_c
+WHERE
+    cno IN (
+        SELECT
+            cno
+        FROM
+            tb_sc
+        GROUP BY
+            cno
+        HAVING
+            AVG(grade) = (
+                SELECT
+                    MAX(AVG(grade))
+                FROM
+                    tb_sc
+                GROUP BY
+                    cno
+            )
+    );
+```
+
 
 ### update
 
