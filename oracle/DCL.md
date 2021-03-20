@@ -12,6 +12,10 @@ TEMPORARY TABLESPACE "TEMP";
 比如drop user 用户名 【cascade】
 注意：在删除用户时，如果要删除的用户，已经创建了表，那么就需要在删除的时候带一个参数cascade，即把该用户及表一同删除;
 
+```
+drop user test casecade
+```
+
 
 ### 权限
 
