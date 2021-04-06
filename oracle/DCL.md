@@ -96,7 +96,7 @@ SQL> select grantee,privilege from dba_sys_privs where grantee='RESOURCE' order 
   #### 对象权限：比如：对表中数据进行增删改查操作，拥有数据库对象权限的用户可以对所拥有的对象进行相应的操作。
   
  ####  数据库角色
-  oracle数据库角色是若干系统权限的集合，给Oracle用户进行授数据库角色，就是等于赋予该用户若干数据库系统权限。常用的数据库角色如下：
+  ** oracle数据库角色是若干系统权限的集合， ** 给Oracle用户进行授数据库角色，就是等于赋予该用户若干数据库系统权限。常用的数据库角色如下：
   
   CONNECT角色：connect角色是Oracle用户的基本角色，connect权限代表着用户可以和Oracle服务器进行连接，建立session（会 话）。
   
